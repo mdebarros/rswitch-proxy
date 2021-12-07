@@ -12,7 +12,7 @@ router.get('/', async (ctx) => {
   };
 })
 
-const toPACS002Response = (xmlReqObj, status = 'PNDG') => {
+const toPACS002Response = (xmlReqObj, status = 'PDNG') => {
   return `<?xml version="1.0" encoding="utf-8"?>
   <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
       <FIToFIPmtStsRpt>
@@ -95,7 +95,7 @@ router.post('/transfers', async (ctx) => {
   })
 
   try {
-    let sstatus = Env.get('ENV_SSTATUS').default('PNDG').asString();
+    let sstatus = Env.get('ENV_SSTATUS').default('PDNG').asString();
     let sreturncode = Env.get('ENV_SRETCODE').default('200').asInt();
     let cbstatus = Env.get('ENV_CBSTATUS').default('ACSC').asString();
     let isCallbackDisabled = Env.get('ENV_IS_CALLBACK_DISABLED').default('false').asBool();
