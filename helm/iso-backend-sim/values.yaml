@@ -18,13 +18,21 @@ nameOverride: ""
 fullnameOverride: ""
 
 env: 
+  ## Set the sync status
   ENV_SSTATUS: PNDG
+  ## Set the sync http-response-code
   ENV_SRETCODE: 200
+  ## Set the Callback status for success
   ENV_CBSTATUS: ACSC
+  ## Set the Callback status for reject
   # ENV_CBSTATUS: RJCT
+  ## Disable async callbacks
   ENV_IS_CALLBACK_DISABLED: false
-  CB_BASEURL: 
+  ## IGNORE: This is not needed
+  CB_BASEURL:
+  ## ISO-Connector ISO End-point
   CB_ROUTE: http://localhost:3003/outbound/iso20022
+  ## Callback timeout
   CB_TIMEOUT: 5000
 
 serviceAccount:
